@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping List App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
@@ -18,7 +19,7 @@
                 <button class="btn btn-danger" @click="changeState('default')">Cancel</button>
             </div>
             <ul>
-                <li v-for='item in items'>{{ item }}</li>
+                <li v-for='item in items' :class="{'text-muted': item.purchased}">{{ item.label }}</li>
             </ul>
             <span v-if='items.length === 0'>You don't have any item on the list!</span>
         </div>

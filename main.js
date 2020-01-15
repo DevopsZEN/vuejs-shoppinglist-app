@@ -5,14 +5,26 @@ var shoppingList = new Vue({
         header: 'Shopping list app',
         newItem: '',
         items: [
-            //'10 Party hats',
-            //'2 Board games',
-            //'20 Cups'
+            {
+                label: '10 party hats',
+                purchased: false
+            },
+            {
+                label: '2 board games',
+                purchased: true
+            },
+            {
+                label: '20 cups',
+                purchased: false
+            }
         ],
     },
     methods: {
         saveItem: function() {
-            this.items.push(this.newItem);
+            this.items.push({
+                label: this.newItem,
+                purchased: false
+            });
             this.newItem = '';
         },
         changeState: function(newState) {
