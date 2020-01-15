@@ -19,7 +19,7 @@
                 <button class="btn btn-danger" @click="changeState('default')">Cancel</button>
             </div>
             <ul>
-                <li v-for='item in items' :class="{'text-muted': item.purchased}">{{ item.label }}</li>
+                <li v-for='item in items' :class="{'text-muted': item.purchased}" @click="togglePurchased(item)">{{ item.label }}</li>
             </ul>
             <span v-if='items.length === 0'>You don't have any item on the list!</span>
         </div>

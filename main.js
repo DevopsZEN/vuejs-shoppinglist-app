@@ -30,6 +30,9 @@ var shoppingList = new Vue({
         changeState: function(newState) {
             this.state = newState;
             this.newItem = '';
+        },
+        togglePurchased: function(item) {
+            item.purchased = !item.purchased;
         }
     }
 })
